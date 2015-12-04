@@ -1,0 +1,40 @@
+gems:
+  - jekyll-gist
+
+# Site settings
+title: Filipe's blog
+email: filipenf@gmail.com
+title_description: "Here is where I share my daily adventures with cloud automation, ansible, puppet, aws, programming, and so on..."
+twitter_username: filipenf
+github_username:  filipenf
+
+# Build settings
+#markdown: kramdown
+
+
+# Site settings
+description: "Cloud engineering adventures"
+baseurl: ""
+url: "http://filipenf.github.io"
+title_image: "https://www.gravatar.com/avatar/f210c545d396d05ef2cc27e26695b535?s=328&d=identicon&r=PG"
+google_analytics: "UA-70973132-1"
+github_repository: https://github.com/filipenf
+post_limit: 5
+
+# Social usernames/URLs
+twitter_username: filipenf
+github_username:  filipenf
+linkedin_link: https://br.linkedin.com/in/filipenf
+google_plus_link: https://plus.google.com/u/0/+FilipeFelisbino/
+stackoverflow_link: http://stackoverflow.com/users/1680547/filipe
+
+# Footer
+footer_left: "Based on theme Carte Noire from <a href=\"https://twitter.com/_JacobTomlinson\">Jacob Tomlinson</a>"
+#footer_right: ""
+
+# Build settings
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
+permalink: pretty
+exclude: [vendor]

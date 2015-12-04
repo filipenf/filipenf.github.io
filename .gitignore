@@ -1,0 +1,9 @@
+# Mac Specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+._*
+_site/
+# Ruby
+Gemfile.lock
