@@ -1,9 +1,14 @@
-
-### Ansible tip of the day: Using with_nested to merge a list with a dict
+---
+layout: post
+title: "Ansible: Using with_nested to merge a list with a dict"
+description: ""
+category: 'ansible'
+tags: [ansible, ec2_group, aws]
+---
 
 I make heavy use of Ansible for AWS infrastructure provisioning. From creating VPCs, subnets, EC2 instances, security groups and so on.
 
-Because we have some standard central point where we define per-environment networks, I recently got stuck with having to convert a list of subnets (just strings) to a list of dicts to be used by the `ec2_group` module. My list of subnets was something like:
+Because we have a central point where we define per-environment networks, I recently got stuck with having to convert a list of subnets (just strings) to a list of dicts to be used by the `ec2_group` module. My list of subnets was something like:
 
 ```
 internal_networks:
@@ -39,6 +44,7 @@ Of course, I can have any number of rules inside that list. Each one will be com
 Now, to merge the `general_rules` and `internal_networks` data structures together I used **set_fact**:
 
 ```
+{%raw%}
 - set_fact:
   args:
     rule:
@@ -53,6 +59,7 @@ Now, to merge the `general_rules` and `internal_networks` data structures togeth
 
 - name: "Merge networks with rules"
   set_fact: merged_rules="{{merged_rules.results | map(attribute='ansible_facts.rule') | list }}"
+{%endraw%}
 ```
 
 The final data structure should look like:
@@ -73,4 +80,3 @@ The final data structure should look like:
             },
 ```
 
-You can find the complete example [here](https://gist.github.com/filipenf/4869cf597c264031f529). Hope it helps :-)
