@@ -10,7 +10,7 @@ github_username:  filipenf
 disqus_account: filipenf
 
 # Build settings
-#markdown: kramdown
+markdown: kramdown
 
 
 # Site settings
@@ -34,8 +34,5 @@ footer_left: "Based on theme Carte Noire from <a href=\"https://twitter.com/_Jac
 #footer_right: ""
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 permalink: pretty
 exclude: [vendor]
